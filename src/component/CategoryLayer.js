@@ -1,34 +1,45 @@
 import React from 'react';
-import { Markdown } from 'grommet'
-import FrameComponent from './FrameComponent';
+import { Markdown, Box } from 'grommet'
+// import FrameComponent from './FrameComponent';
 
 export default class CategoryLayer extends React.Component {
 
     constructor(props) {
         super(props);
-   
+        this.content_markdown = ``;
+        this.algin = 'center';
         this.state = {
-            content: `# Hi there, you visited my site... That's DOPE!
-            This is my version of a business card, just doing my part to save the trees and all that.`
+            content_markdown: ``,
+            algin: 'center',
+            pad: 'xlarge'
         }
     }
- 
+    
     componentDidMount(){
+      var items = {}
+      items.content_markdown =  this.props.content;
       
-       fetch(this.props.filePath)
-       .then(response => {
-           console.log(response.text())
-           return response.text() })
-       .then(text => this.setState({content: text}))
-    }
+      if ('algin' in this.props) this.algin = this.props.algin;
+      if ('pad' in this.props) items.pad = this.props.pad;
+      if ('size' in this.props) items.size = this.props.size;
+      this.setState(items)
+    };
+
 
     render() {
        
         return (
-            <FrameComponent>
-                <Markdown>{this.state.content}
+            <Box 
+              algin={this.algin}
+              justify={this.algin}
+              pad={this.state.pad}
+              width={this.state.size}
+              background="neutral-2"
+              height={this.state.size}
+            > 
+                <Markdown >{this.state.content_markdown}
                 </Markdown>
-            </FrameComponent>
+            </Box>
         )
     }
 }

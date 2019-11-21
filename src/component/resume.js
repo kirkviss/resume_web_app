@@ -1,40 +1,20 @@
-import React from 'react';
-import { Box, Grid, Markdown } from 'grommet';
-import { isModuleSpecifier } from '@babel/types';
-// const path = require('path');
-const fs = require('fs');
 
-const ComponentFrame = () => (
-    <Grid>
-        <Box align='center' pad='large' />
-    </Grid>
-);
+module.exports = `
+# Work Experience
 
-class textBox extends React.Component {
-    render() {
-        // const resumePath = path.join(__dirname, 'mrkdwn/resume.js')
-        // const resumePath = '../mrkdwn/resume.js'
-        const resumeString = fs.readFile('../mrkdwn/resume.js', 'utf8');
-        return () => (
-            <Grid>
-                <Box align='center' pad='large'>
-                    <Markdown>
-                        {
-                            `# Out of Breath
+### TD Ameritrade
+* Full stack web development 
+* Micro-services development
+* Infrastructure automation
+* Agile environment 
+* Architecture design
+* Chat bots
 
-You know, sometimes in life it seems like there's no way out. Like
-a sheep trapped in a maze designed by wolves.
+## Tech Stack
+* Python 
+* Node.js
+* OpenAPI/Swagger
+* MongoDB
+* Postgres
 
-[reference](#)`}
-                    </Markdown>>
-            </Box>
-            </Grid>
-        )
-    }
-
-}
-
-
- module.export = {
-     "textBox": textBox
- }
+`
