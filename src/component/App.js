@@ -3,15 +3,14 @@ import './App.css';
 import CategoryLayer from './CategoryLayer.js'
 import { Grid, Grommet, Box, Text, Button} from 'grommet';
 import { grommet } from "grommet/themes";
-const resume = require('./resume')
-const introduction = require('./introduction')
+import { introduction, resume } from '../content'
 
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sidebar: false
+      sidebar: true
     }
   }
   render() {
@@ -21,13 +20,14 @@ export default class App extends React.Component {
         <Grommet full theme={grommet}>
           <Grid
             fill
-            rows={['auto', 'flex']}
-            columns={['auto', 'flex']}
+            columns={['auto','flex']}
+            rows={['auto','flex']}
             areas={[
               {name : "header", start: [0,0], end: [1,0] },
               {name : "sidebar", start: [0,1], end: [0,1] },
               { name: "main", start: [1, 1], end: [1, 1] }
             ]}
+          
           >
             {/* -- Header -- */}
             <Box
@@ -35,13 +35,13 @@ export default class App extends React.Component {
               direction="row"
               align="center"
               justify="between"
-              pad={{ horizontal: "medium", vertical: "small" }}
+              pad={{ horizontal: "medium", vertical: "medium" }}
               background="brand"
             >
               <Button onClick={() => this.setState({sidebar: !this.state.sidebar})}>
-                <Text size="large">Menu</Text>
+                <Text size="large">Kirk Visser</Text>
               </Button>
-              <Text>my@email</Text>
+              <Text>kirkviss@gmail.com</Text>
             </Box>
             {/* -- Sidebar -- */}
             {this.state.sidebar && (
@@ -51,7 +51,7 @@ export default class App extends React.Component {
                 width="small"
                 animation={[
                   { type: "fadeIn", duration: 300 },
-                  { type: "slideRight", size:"xlarge", duration: 150 }
+                  { type: "slideRight", size:"large", duration: 150 }
                 ]}
               >
                 {["First", "Second", "Third"].map(name => (
@@ -66,12 +66,15 @@ export default class App extends React.Component {
             {/* -- Main --  */}
             <Box 
               gridArea="main"
-              justify="center"
+              justify="stretch"
               align="center"
-              overflow="auto"
+              fill
+              flex
+              direction='column'
+              
             >
-              < CategoryLayer content={introduction} size="large" />
-              < CategoryLayer content={resume}  size="large"/>
+              < CategoryLayer content={introduction} />
+              < CategoryLayer content={resume}  />  
             </Box>
         
           </Grid>

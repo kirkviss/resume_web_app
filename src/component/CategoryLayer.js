@@ -1,27 +1,30 @@
 import React from 'react';
 import { Markdown, Box } from 'grommet'
-// import FrameComponent from './FrameComponent';
+
 
 export default class CategoryLayer extends React.Component {
 
     constructor(props) {
         super(props);
-        this.content_markdown = ``;
-        this.algin = 'center';
         this.state = {
             content_markdown: ``,
             algin: 'center',
-            pad: 'xlarge'
+            alignContent: 'center',
+            pad: 'xlarge',
+            justify: 'between'
         }
     }
     
-    componentDidMount(){
+    async componentDidMount(){
       var items = {}
       items.content_markdown =  this.props.content;
-      
-      if ('algin' in this.props) this.algin = this.props.algin;
-      if ('pad' in this.props) items.pad = this.props.pad;
-      if ('size' in this.props) items.size = this.props.size;
+      // -- Over write any of the default properties -- 
+      for (var key in this.props) {
+        if (key in this.props) {
+            items[key] = this.props[key]
+        }
+      }
+
       this.setState(items)
     };
 
@@ -30,12 +33,12 @@ export default class CategoryLayer extends React.Component {
        
         return (
             <Box 
-              algin={this.algin}
-              justify={this.algin}
+              fill
+              direction='column'
+              algin={this.state.algin}
+              justify={this.state.algin}
               pad={this.state.pad}
-              width={this.state.size}
               background="neutral-2"
-              height={this.state.size}
             > 
                 <Markdown >{this.state.content_markdown}
                 </Markdown>
