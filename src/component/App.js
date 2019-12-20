@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import CategoryLayer from './CategoryLayer.js'
+import NavBarBox from './NavBar'
 import { Grid, Grommet, Box, Text, Button, Layer } from 'grommet';
 import { grommet } from "grommet/themes";
 import { introduction, resume } from '../content'
@@ -10,9 +11,11 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      navbar: false
+      navbar: false,
+      navBarDestinations: ["Intro", "Experience", "Technologies", "Projects"]
     }
   }
+
   render() {
 
     return (
@@ -40,62 +43,42 @@ export default class App extends React.Component {
               background="brand"
             >
               <Text>kirkviss@gmail.com</Text>
-              <Button 
-                onClick={() => this.setState({ navbar: !this.state.navbar })} 
-                icon={<Menu /> }
+              <Button
+                onClick={() => this.setState({ navbar: !this.state.navbar })}
+                icon={<Menu />}
               />
 
-
+              <NavBarBox references={this.state.navBarDestinations} direction="row"/>
             </Box>
+
             {/* -- Sidebar -- */}
-
-
             {this.state.navbar && (
               <Layer
                 full="vertical"
                 position="right"
                 onEsc={this.state.navbar}
+                onClickOutside={() => this.setState({ navbar: !this.state.navbar })}
+                responsive={false}
+                background="brand"
+                animation={[
+                  { type: "fadeIn", duration: 300 },
+                  { type: "slideLeft", size: "large", duration: 150 }
+                ]}
               >
                 <Box
+                  fill
                   direction="row"
-                  align="center"
-                  as="header"
+                  align="left"
                   elevation="small"
                   background="brand"
                   justify="between"
+                  pad={{ "horizontal": "large" }}
                 >
-
-                  <Button 
+                  <NavBarBox references={this.state.navBarDestinations} />
+                  <Button
+                    alignSelf="start"
                     onClick={() => this.setState({ navbar: !this.state.navbar })}
                     icon={<FormClose />} />
-                </Box>
-                <Box
-                  fill
-                  overflow="auto"
-                  background="brand"
-                  width="small"
-                  animation={[
-                    { type: "fadeIn", duration: 300 },
-                    { type: "slideLeft", size: "large", duration: 150 }
-                  ]}
-                >
-                  {["First", "Second", "Third"].map(label => (
-                    <Button
-                      hoverIndicator
-                      plain
-                    >
-                      <Box
-                        key={label}
-                        href="#"
-
-                        pad={{ horizontal: "medium", vertical: "medium" }}
-                      >
-                        <Text size="large"> {label}</Text>
-
-                      </Box >
-                    </Button>
-                  ))}
-
                 </Box>
               </Layer>
             )}

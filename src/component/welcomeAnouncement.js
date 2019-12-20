@@ -1,5 +1,5 @@
-import React 
-import { AnnounceContext, Box, Grommet, Heading, Text } from "grommet";
+import React from 'react'
+import { AnnounceContext, Box, Grommet, Heading, Announcer } from "grommet";
 import { isModuleSpecifier } from "@babel/types";
 
 const welcomeAnnouncement = props => (
