@@ -9,15 +9,33 @@ import { FormClose, Menu } from "grommet-icons";
 
 export default class App extends React.Component {
   constructor(props) {
+    
     super(props);
+    this.mobileLengthLimit = 680;
+    this.updateIsMobile = this.updateIsMobile.bind();
     this.state = {
       navbar: false,
-      navBarDestinations: ["Intro", "Experience", "Technologies", "Projects"]
+      navBarDestinations: ["Intro", "Experience", "Technologies", "Projects"],
+      isMobile: window.innerWidth < this.mobileLengthLimit
     }
   }
 
-  render() {
+  updateIsMobile = () => {
+    this.setState({
+      isMobile: window.innerWidth < this.mobileLengthLimit
+    });
+  };
 
+  componentDidMount(){
+    window.addEventListener('resize', this.updateIsMobile);
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateIsMobile);
+  };
+
+  render() {
+    console.log(this.state.isMobile)
     return (
       <div className="component-app">
         <Grommet full theme={grommet}>
@@ -28,8 +46,6 @@ export default class App extends React.Component {
             areas={[
               { name: "header", start: [0, 0], end: [1, 0] },
               { name: "main", start: [0, 1], end: [1, 1] },
-              // {name : "sidebar", start: [1,1], end: [1,1] }
-
             ]}
 
           >
@@ -43,12 +59,17 @@ export default class App extends React.Component {
               background="brand"
             >
               <Text>kirkviss@gmail.com</Text>
-              <Button
-                onClick={() => this.setState({ navbar: !this.state.navbar })}
-                icon={<Menu />}
-              />
+              {this.state.isMobile ? (
+                <Button
+                  onClick={() => this.setState({ navbar: !this.state.navbar })}
+                  icon={<Menu/>}
+                />
+              ) : (
+                <NavBarBox references={this.state.navBarDestinations} direction="row" />
+              )}
+             
+             
 
-              <NavBarBox references={this.state.navBarDestinations} direction="row"/>
             </Box>
 
             {/* -- Sidebar -- */}
