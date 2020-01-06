@@ -65,7 +65,7 @@ export default class App extends React.Component {
                   icon={<Menu/>}
                 />
               ) : (
-                <NavBarBox references={this.state.navBarDestinations} direction="row" />
+                <NavBarBox references={this.state.navBarDestinations} direction="row" justify="end" />
               )}
              
              
@@ -89,7 +89,6 @@ export default class App extends React.Component {
                 <Box
                   fill
                   direction="row"
-                  align="left"
                   elevation="small"
                   background="brand"
                   justify="between"

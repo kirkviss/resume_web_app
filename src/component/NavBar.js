@@ -5,7 +5,6 @@ export default class NavBarBox extends React.Component {
     constructor(props) {
         super(props);
         this.state ={
-            direction: props.direction,
             references: props.references
         }
     }
@@ -17,7 +16,8 @@ export default class NavBarBox extends React.Component {
                 overflow="auto"
                 background="brand"
                 width="small"
-                direction={this.state.direction}
+
+                {...this.props}
             >
 
                 {this.state.references.map(label => (
