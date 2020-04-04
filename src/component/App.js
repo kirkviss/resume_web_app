@@ -2,14 +2,15 @@ import React from 'react';
 import './App.css';
 import CategoryLayer from './CategoryLayer.js'
 import NavBarBox from './NavBar'
-import { Grid, Grommet, Box, Text, Button, Layer } from 'grommet';
+import { Grid, Grommet, Box, Text, Button, Layer, Heading } from 'grommet';
 import { grommet } from "grommet/themes";
 import { introduction, resume } from '../content'
 import { FormClose, Menu } from "grommet-icons";
+var figlet = require('figlet');
 
 export default class App extends React.Component {
   constructor(props) {
-    
+
     super(props);
     this.mobileLengthLimit = 680;
     this.updateIsMobile = this.updateIsMobile.bind();
@@ -26,7 +27,7 @@ export default class App extends React.Component {
     });
   };
 
-  componentDidMount(){
+  componentDidMount() {
     window.addEventListener('resize', this.updateIsMobile);
   };
 
@@ -49,7 +50,7 @@ export default class App extends React.Component {
             ]}
 
           >
-            {/* -- Header -- */}
+            {/* -- header & navbar-- */}
             <Box
               gridArea="header"
               direction="row"
@@ -58,17 +59,15 @@ export default class App extends React.Component {
               pad={{ horizontal: "medium", vertical: "medium" }}
               background="brand"
             >
-              <Text>kirkviss@gmail.com</Text>
+              <Text>Logo</Text>
               {this.state.isMobile ? (
                 <Button
                   onClick={() => this.setState({ navbar: !this.state.navbar })}
-                  icon={<Menu/>}
+                  icon={<Menu />}
                 />
               ) : (
-                <NavBarBox references={this.state.navBarDestinations} direction="row" justify="end" />
-              )}
-             
-             
+                  <NavBarBox references={this.state.navBarDestinations} direction="row" justify="end" />
+                )}
 
             </Box>
 
@@ -103,21 +102,43 @@ export default class App extends React.Component {
               </Layer>
             )}
 
-
-
-
             {/* -- Main --  */}
             <Box
               gridArea="main"
-              justify="stretch"
-              align="center"
-              fill
-              flex
-              direction='column'
-
+              justify="center"
+              fill={true}
+              direction="row"
+              background="neutral-2"
             >
-              < CategoryLayer content={introduction} />
-              < CategoryLayer content={resume} />
+
+              <Box
+                margin='xlarge'
+              >
+                <Heading
+                  level={4}
+                  size='large'
+                  margin={{ 'vertical': 'xsmall' }}
+
+                > k>$ source greet_guest.sh </Heading>
+                <Heading level={1} size='large' margin={{ 'vertical': 'xsmall' }} textAlign='start'>{figlet.text('Boo!', {
+                  font: 'Ghost',
+                  horizontalLayout: 'default',
+                  verticalLayout: 'default'
+                }, function (err, data) {
+                  if (err) {
+                    console.log('Something went wrong...');
+                    console.dir(err);
+                    return;
+                  }
+                  console.log(data);
+                })} </Heading>
+                <Heading level={2} size='small' margin={{ 'vertical': 'xsmall' }}> And I like to build things...</Heading>
+                <Heading level={5} size='small' margin={{ 'vertical': 'xsmall' }}> I am software engineer who is constantly looking for new technologies to master and to build cool new things. </Heading>
+                {/*TODO create contract button here  */}
+              </Box>
+              <Box>
+
+              </Box>
             </Box>
 
           </Grid>

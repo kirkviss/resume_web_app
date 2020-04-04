@@ -39,6 +39,7 @@ export default class CategoryLayer extends React.Component {
               justify={this.state.algin}
               pad={this.state.pad}
               background="neutral-2"
+              {...this.props}
             > 
                 <Markdown >{this.state.content_markdown}
                 </Markdown>

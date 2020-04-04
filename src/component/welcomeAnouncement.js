@@ -1,18 +1,5 @@
-import React from 'react'
-import { AnnounceContext, Box, Grommet, Heading, Announcer } from "grommet";
-import { isModuleSpecifier } from "@babel/types";
+import React, { Component } from 'react';
+import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
+import { grommet } from 'grommet';
 
-const welcomeAnnouncement = props => (
-    <Grommet theme={grommet} full>
-      <Box justify="center" align="center" background="brand" fill>
-        <Heading>Welcome to announcement section</Heading>
-        <AnnounceContext.Consumer>
-          {announce => <Announcer announce={announce} {...props} />}
-        </AnnounceContext.Consumer>
-      </Box>
-    </Grommet>
-  );
 
-module.exports= {
-    "welcomeAnnouncement": welcomeAnnouncement
-}

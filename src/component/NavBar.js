@@ -16,7 +16,6 @@ export default class NavBarBox extends React.Component {
                 overflow="auto"
                 background="brand"
                 width="small"
-
                 {...this.props}
             >
 
