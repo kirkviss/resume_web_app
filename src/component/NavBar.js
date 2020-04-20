@@ -23,10 +23,11 @@ export default class NavBarBox extends React.Component {
                     <Button
                         hoverIndicator
                         plain
+                        href={`#${label}`}
                     >
                         <Box
                             key={label}
-                            href="#"
+              
                             pad={{ horizontal: "medium", vertical: "medium" }}
                         >
                             <Text size="large"> {label}</Text>

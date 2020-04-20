@@ -1,12 +1,15 @@
 import React from 'react';
-import './App.css';
-import CategoryLayer from './CategoryLayer.js'
+import '../static/App.css';
+import {
+  WelcomeBanner,
+  Experience,
+  Education
+} from './doc_layers'
 import NavBarBox from './NavBar'
-import { Grid, Grommet, Box, Text, Button, Layer, Heading } from 'grommet';
+import { Grid, Grommet, Box, Text, Button, Layer } from 'grommet';
 import { grommet } from "grommet/themes";
-import { introduction, resume } from '../content'
 import { FormClose, Menu } from "grommet-icons";
-var figlet = require('figlet');
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,7 +19,7 @@ export default class App extends React.Component {
     this.updateIsMobile = this.updateIsMobile.bind();
     this.state = {
       navbar: false,
-      navBarDestinations: ["Intro", "Experience", "Technologies", "Projects"],
+      navBarDestinations: ["Intro", "Experience", "Education"],
       isMobile: window.innerWidth < this.mobileLengthLimit
     }
   }
@@ -105,40 +108,40 @@ export default class App extends React.Component {
             {/* -- Main --  */}
             <Box
               gridArea="main"
-              justify="center"
-              fill={true}
-              direction="row"
               background="neutral-2"
+              overflow="auto"
+              pad="small"
+              gap="small"
             >
 
-              <Box
-                margin='xlarge'
+              <Grid
+                columns={{
+                  count: 1,
+                  size: "auto"
+                }}
+                gap="xsmall"
+                justify='start'
+
               >
-                <Heading
-                  level={4}
-                  size='large'
-                  margin={{ 'vertical': 'xsmall' }}
-
-                > k>$ source greet_guest.sh </Heading>
-                <Heading level={1} size='large' margin={{ 'vertical': 'xsmall' }} textAlign='start'>{figlet.text('Boo!', {
-                  font: 'Ghost',
-                  horizontalLayout: 'default',
-                  verticalLayout: 'default'
-                }, function (err, data) {
-                  if (err) {
-                    console.log('Something went wrong...');
-                    console.dir(err);
-                    return;
-                  }
-                  console.log(data);
-                })} </Heading>
-                <Heading level={2} size='small' margin={{ 'vertical': 'xsmall' }}> And I like to build things...</Heading>
-                <Heading level={5} size='small' margin={{ 'vertical': 'xsmall' }}> I am software engineer who is constantly looking for new technologies to master and to build cool new things. </Heading>
-                {/*TODO create contract button here  */}
-              </Box>
-              <Box>
-
-              </Box>
+                <WelcomeBanner
+                  id="Intro"
+                  pad={{
+                    left: "xlarge"
+                  }}
+                  margin='large' />
+                <Experience
+                  id="Experience"
+                  pad={{
+                    left: "xlarge"
+                  }}
+                  margin='large' />
+                <Education
+                  id="Education"
+                  pad={{
+                    left: "xlarge"
+                  }}
+                  margin='large' />
+              </Grid>
             </Box>
 
           </Grid>
