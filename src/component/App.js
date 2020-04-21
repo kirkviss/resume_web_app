@@ -5,8 +5,8 @@ import {
   Experience,
   Education,
   Skills
-} from './doc_layers'
-import NavBarBox from './NavBar'
+} from './main'
+import { NavBar } from './title_bar'
 import { Grid, Grommet, Box, Text, Button, Layer } from 'grommet';
 import { grommet } from "grommet/themes";
 import { FormClose, Menu } from "grommet-icons";
@@ -70,7 +70,7 @@ export default class App extends React.Component {
                   icon={<Menu />}
                 />
               ) : (
-                  <NavBarBox references={this.state.navBarDestinations} direction="row" justify="end" />
+                  <NavBar references={this.state.navBarDestinations} direction="row" justify="end" />
                 )}
 
             </Box>
@@ -97,7 +97,7 @@ export default class App extends React.Component {
                   justify="between"
                   pad={{ "horizontal": "large" }}
                 >
-                  <NavBarBox references={this.state.navBarDestinations} />
+                  <NavBar references={this.state.navBarDestinations} />
                   <Button
                     alignSelf="start"
                     onClick={() => this.setState({ navbar: !this.state.navbar })}

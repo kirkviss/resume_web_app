@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, Text } from 'grommet'
 
-export default class NavBarBox extends React.Component {
+export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state ={

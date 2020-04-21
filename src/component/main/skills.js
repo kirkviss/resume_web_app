@@ -2,8 +2,13 @@ import React from 'react';
 import { Box, Chart, Text, Heading } from 'grommet';
 
 const SkillChart = ({ label, value }) => (
-    <Box flex={false} basis="xsmall" align="center" gap="small">
-
+    <Box
+        flex={false}
+        basis="xsmall"
+        align="center"
+        gap="small"
+        id={label}
+    >
         <Chart
             bounds={[
                 [0, 2],
@@ -22,6 +27,18 @@ const SkillChart = ({ label, value }) => (
 
 )
 
+const skillObj = [
+    { label: 'Python', value: 1.75 },
+    { label: 'Node', value: 2 },
+    { label: 'MongoDB', value: 1 },
+    { label: 'PostgreSQL', value: 1.5 },
+    { label: 'RHEL7', value: 2 },
+    { label: 'Bash', value: 1.5 },
+    { label: 'PowerShell', value: .5 },
+    { label: 'C++', value: .5},
+    { label: 'Java', value: .5}
+]
+
 const Skills = (props) => (
     <Box
         {...props}
@@ -33,8 +50,6 @@ const Skills = (props) => (
             direction='row'
             gap='medium'
         >
-
-
             {skillObj.map((data) => (
                 <SkillChart label={data.label} value={data.value} />
             ))}
@@ -42,26 +57,8 @@ const Skills = (props) => (
     </Box>
 )
 
-const skillObj = [
-    { label: 'Python', value: 1.75 },
-    { label: 'Node', value: 2 },
-    { label: 'MongoDB', value: 1 },
-    { label: 'PostgreSQL', value: 1.5 },
-    { label: 'RHEL7', value: 2 },
-    { label: 'Bash', value: 1.5 },
-    { label: 'PowerShell', value: .5 },
 
-]
-// Python: 1.17,
-// Node: 2,
-// MongoDB: 1,
-// PostgreSQL: 1.5,
-// RHEL7: 2,
-// Bash: 1.5,
-// PowerShell: .5,
-// 'C++': .5,
-// Jave: .5
-// }
+
 
 
 
