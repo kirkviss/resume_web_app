@@ -121,20 +121,13 @@ export default class App extends React.Component {
                   count: 1,
                   size: "auto"
                 }}
-                gap="xsmall"
-                align="center"
-                // justify='start'
-
+               
               >
                 <WelcomeBanner
-
-                  // align="center"
                   margin='large' />
                 <Experience
-                  // align="center"
                   margin='large' />
                 <Education
-                  // align="center"
                   margin='large' />
                 <Skills
                      margin='large'/>
