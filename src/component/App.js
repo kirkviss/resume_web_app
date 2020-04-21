@@ -3,7 +3,8 @@ import '../static/App.css';
 import {
   WelcomeBanner,
   Experience,
-  Education
+  Education,
+  Skills
 } from './doc_layers'
 import NavBarBox from './NavBar'
 import { Grid, Grommet, Box, Text, Button, Layer } from 'grommet';
@@ -112,6 +113,7 @@ export default class App extends React.Component {
               overflow="auto"
               pad="small"
               gap="small"
+              align="center"
             >
 
               <Grid
@@ -120,27 +122,22 @@ export default class App extends React.Component {
                   size: "auto"
                 }}
                 gap="xsmall"
-                justify='start'
+                align="center"
+                // justify='start'
 
               >
                 <WelcomeBanner
-                  id="Intro"
-                  pad={{
-                    left: "xlarge"
-                  }}
+
+                  // align="center"
                   margin='large' />
                 <Experience
-                  id="Experience"
-                  pad={{
-                    left: "xlarge"
-                  }}
+                  // align="center"
                   margin='large' />
                 <Education
-                  id="Education"
-                  pad={{
-                    left: "xlarge"
-                  }}
+                  // align="center"
                   margin='large' />
+                <Skills
+                     margin='large'/>
               </Grid>
             </Box>
 
