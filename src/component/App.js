@@ -20,7 +20,7 @@ export default class App extends React.Component {
     this.updateIsMobile = this.updateIsMobile.bind();
     this.state = {
       navbar: false,
-      navBarDestinations: ["Intro", "Experience", "Education"],
+      navBarDestinations: ["Intro", "Experience", "Education", "Technology"],
       isMobile: window.innerWidth < this.mobileLengthLimit
     }
   }

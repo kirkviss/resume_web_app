@@ -1,1 +1,1 @@
-export { default as Navbar } from './nav_bar.js'
+export { default as NavBar } from './nav_bar.js';
