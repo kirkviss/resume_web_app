@@ -4,13 +4,44 @@ import {
   WelcomeBanner,
   Experience,
   Education,
-  Skills
+  Skills,
+  Contact
 } from './main'
 import { NavBar } from './title_bar'
-import { Grid, Grommet, Box, Text, Button, Layer } from 'grommet';
+import {
+  Grid,
+  Grommet,
+  Box,
+  Text,
+  Button,
+  Layer
+} from 'grommet';
+import { deepMerge } from "grommet/utils";
 import { grommet } from "grommet/themes";
 import { FormClose, Menu } from "grommet-icons";
 
+
+const customFocus = deepMerge(grommet, {
+  anchor: {
+    color: 'accent-1'
+  },
+  global: {
+
+    hover: {
+      color: 'black',
+      background: {
+        color: 'accent-1',
+        opacity: 0.9 
+      }
+
+    },
+    colors: {
+      text: 'light-1',
+      background: 'black',
+      nav: 'black',
+    }
+  }
+});
 
 export default class App extends React.Component {
   constructor(props) {
@@ -39,20 +70,21 @@ export default class App extends React.Component {
     window.removeEventListener('resize', this.updateIsMobile);
   };
 
+
   render() {
     console.log(this.state.isMobile)
     return (
       <div className="component-app">
-        <Grommet full theme={grommet}>
+        <Grommet full theme={customFocus}>
           <Grid
             fill
-            columns={['auto', 'flex']}
+            columns={['1/8', '7/8']}
             rows={['auto', 'flex']}
             areas={[
-              { name: "header", start: [0, 0], end: [1, 0] },
-              { name: "main", start: [0, 1], end: [1, 1] },
+              { name: "header", start: [0, 0], end: [2, 0] },
+              { name: 'contract', start: [0, 1], end: [1, 1] },
+              { name: "main", start: [1, 1], end: [2, 1] },
             ]}
-
           >
             {/* -- header & navbar-- */}
             <Box
@@ -61,9 +93,9 @@ export default class App extends React.Component {
               align="center"
               justify="between"
               pad={{ horizontal: "medium", vertical: "medium" }}
-              background="brand"
+              background="nav"
             >
-              <Text>Logo</Text>
+              <Text >Logo</Text>
               {this.state.isMobile ? (
                 <Button
                   onClick={() => this.setState({ navbar: !this.state.navbar })}
@@ -83,7 +115,6 @@ export default class App extends React.Component {
                 onEsc={this.state.navbar}
                 onClickOutside={() => this.setState({ navbar: !this.state.navbar })}
                 responsive={false}
-                background="brand"
                 animation={[
                   { type: "fadeIn", duration: 300 },
                   { type: "slideLeft", size: "large", duration: 150 }
@@ -93,9 +124,9 @@ export default class App extends React.Component {
                   fill
                   direction="row"
                   elevation="small"
-                  background="brand"
                   justify="between"
                   pad={{ "horizontal": "large" }}
+                  background='background'
                 >
                   <NavBar references={this.state.navBarDestinations} />
                   <Button
@@ -106,31 +137,30 @@ export default class App extends React.Component {
               </Layer>
             )}
 
+            {/* -- Contact --  */}
+
+            <Contact gridArea='contact' />
             {/* -- Main --  */}
             <Box
               gridArea="main"
-              background="neutral-2"
               overflow="auto"
-              pad="small"
-              gap="small"
-              align="center"
+              background='main_background'
             >
 
               <Grid
-                columns={{
-                  count: 1,
-                  size: "auto"
-                }}
-               
+                gap="large"
+                algin='center'
+                rows={['large']}
               >
                 <WelcomeBanner
-                  margin='large' />
+                  margin='large'
+                />
                 <Experience
                   margin='large' />
                 <Education
                   margin='large' />
                 <Skills
-                     margin='large'/>
+                  margin='large' />
               </Grid>
             </Box>
 
@@ -143,3 +173,4 @@ export default class App extends React.Component {
     )
   }
 }
+

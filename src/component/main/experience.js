@@ -21,7 +21,7 @@ const Experience = (props) => (
 
 1/2020 - 4/2020
 
-[Node.js](#skills), [JaveScript](#skills), [Nginx](#skill)
+[Node.js](#node.js), [JaveScript](#skills), [Nginx](#skill)
 
 ### Infrastructure Software Engineer I
 
@@ -29,7 +29,7 @@ const Experience = (props) => (
 
 6/2018 - 1/2020
 
-[Node.js](#skills), [JaveScript](#skills), [Nginx](#skill)
+[Node.js](#skills), [JaveScript](#skills), [Nginx](#skill), [Python](#Python)
 
 ### IAAS and Cloud Engineering Co-op
 
@@ -53,7 +53,7 @@ const Experience = (props) => (
 
 1/2015 – 5/2015
 
-[Node.js](#skills), [JaveScript](#skills), [Nginx](#skill)
+[Node.js](#/Node.JS), [JaveScript](#skills), [Nginx](#skill)
 
 
 

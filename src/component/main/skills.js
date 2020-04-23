@@ -28,7 +28,7 @@ const SkillChart = ({ label, value }) => (
 
 const skillObj = [
     { label: 'Python', value: 1.75 },
-    { label: 'Node', value: 2 },
+    { label: 'Node.js', value: 2 },
     { label: 'MongoDB', value: 1 },
     { label: 'PostgreSQL', value: 1.5 },
     { label: 'RHEL7', value: 2 },

@@ -14,7 +14,7 @@ export default class NavBar extends React.Component {
             <Box
                 fill
                 overflow="auto"
-                background="brand"
+                background="nav"
                 width="small"
                 {...this.props}
             >
@@ -22,6 +22,7 @@ export default class NavBar extends React.Component {
                 {this.state.references.map(label => (
                     <Button
                         hoverIndicator
+                        round
                         plain
                         href={`#${label}`}
                     >
