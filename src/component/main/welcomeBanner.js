@@ -15,9 +15,9 @@ const WelcomeBanner = (props) => (
             level={4}
             pad='none'
             margin='none'
-            color='accent-1'
+            color='customHighlight'
         > Hello world... I am</Heading>
-        <Heading pad='none' margin='none' size='large'>Kirk Visser</Heading>
+        <Heading pad='none' margin='none' size='large' color='white '>Kirk Visser</Heading>
         <Heading pad='none' margin='none' color='dark-3'>I like to build things</Heading>
         <Text  margin={{ 'vertical': 'xsmall' }}> I am a software engineer currently located in the New York City metropolitan area. <br/>
         I am a full stack developer that is interested in everything from <br/>front end development to back end architecture.</Text>

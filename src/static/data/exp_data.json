@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Software Engineer",
+        "company": "Capital One",
+        "location": "New York, NY",
+        "start_date": "5/2020",
+        "end_date": "present",
+        "tech": [],
+        "details": ""
+    },
+    {
+        "title": "Infrastructure Software Engineer I",
+        "company": "TD Ameritrade",
+        "location": "Jersey City, NJ",
+        "start_date": "6/2018",
+        "end_date": "1/2020",
+        "tech": [
+            "Nginx",
+            "Node.js",
+            "Python",
+            "Flask",
+            "PostgreSQL",
+            "React",
+            "PowerShell"
+        ],
+        "details": " * Designed, developed, and supported web based applications as a full-stack developer\n * Created RESTful APIs using the Swagger framework, Python and Node.js, leveraging Flask, React, and PostgreSQL\n * Collaborated with a team of five multispecialists under an AGILE/SCRUM approach\n * Created Powershell scripts and models for analysis of Active Directory objects"
+    }
+]

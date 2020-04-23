@@ -23,7 +23,7 @@ import { FormClose, Menu } from "grommet-icons";
 
 const customFocus = deepMerge(grommet, {
   anchor: {
-    color: 'accent-1'
+    color: 'accent-2'
   },
   global: {
 
@@ -36,9 +36,10 @@ const customFocus = deepMerge(grommet, {
 
     },
     colors: {
-      text: 'light-1',
+      text: 'light-6',
       background: 'black',
       nav: 'black',
+      customHighlight: 'accent-1'
     }
   }
 });
