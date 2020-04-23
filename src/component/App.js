@@ -18,12 +18,21 @@ import {
 } from 'grommet';
 import { deepMerge } from "grommet/utils";
 import { grommet } from "grommet/themes";
-import { FormClose, Menu } from "grommet-icons";
+import { FormClose, Menu, SubtractCircle, AddCircle } from "grommet-icons";
 
 
 const customFocus = deepMerge(grommet, {
   anchor: {
     color: 'accent-2'
+  },
+  accordion: {
+    heading: { level: "3" },
+    icons: {
+      collapse: SubtractCircle,
+      expand: AddCircle,
+      color: "brand"
+    },
+    border: undefined
   },
   global: {
 
