@@ -16,23 +16,26 @@ import ExperienceData from '../../static/data/exp_data'
 // TODO set up so only one opens at at time
 const Position = ({ data }) => {
     return (
-        <Box>
-            <AccordionPanel label={
-
+        
+            <AccordionPanel 
+            size='small'
+            label={
                 <Grid
-                    columns={['1/2', '1/2']}
+                    columns={['2/3', '1/3']}
+                    rows={['1/2','1/2']}
                     areas={[
-                        ['header', 'header'],
-                        ['location', 'dates'],
+                        ['header', 'dates'],
+                        ['location', 'location']
                     ]}
                     gap='small'
+                    fill
                 >
                     <Heading gridArea='header' level={3} >{data.title}</Heading>
                     <Box girdArea='location'>
                         <Text weight='bold' color='customHighlight'>{data.company} </Text>
                         <Text>{data.location}</Text>
                     </Box>
-                    <Box gridArea='dates'>
+                    <Box gridArea='dates' pad='medium' align='start' >
                         <Text >{data.start_date} - {data.end_date}</Text>
                     </Box>
                 </Grid>
@@ -52,7 +55,7 @@ const Position = ({ data }) => {
                     ))}
                 </Grid>
             </AccordionPanel>
-        </Box>
+        
     )
 }
 
@@ -62,12 +65,13 @@ const Experience = (props) => (
         {...props}
     >
         <Heading>Experience</Heading>
+
         <Accordion multiple={false} ac>
             {ExperienceData.map(experience => (
                 <Position data={experience} />
             ))}
         </Accordion>
-    </Box>
+        </Box>
     //     <Box
     //         id="Experience"
     //         {...props}

@@ -40,7 +40,7 @@ const customFocus = deepMerge(grommet, {
       color: 'black',
       background: {
         color: 'accent-1',
-        opacity: 0.9 
+        opacity: 0.9
       }
 
     },
@@ -158,15 +158,20 @@ export default class App extends React.Component {
             >
 
               <Grid
-                gap="large"
                 algin='center'
-                rows={['large']}
+                gap="xlarge"
+                rows={['large', 'flex', 'flex']}
+                // columns={['xlarge']}
               >
                 <WelcomeBanner
                   margin='large'
                 />
                 <Experience
-                  margin='large' />
+                  margin='large'
+                  pad={{
+                    right: 'xlarge'
+                  }}
+                />
                 <Education
                   margin='large' />
                 <Skills

@@ -1,14 +1,29 @@
 [
     {
         "title": "Software Engineer",
-        "company": "Capital One",
+        "previous_title":""
+,        "company": "Capital One",
         "location": "New York, NY",
         "start_date": "5/2020",
-        "end_date": "present",
+        "end_date": "Present",
         "tech": [],
-        "details": "dafasdf"
+        "details": ""
     },
     {
+        "title": "Infrastructure Software Engineer II",
+        "company": "TD Ameritrade",
+        "location": "Jersey City, NJ",
+        "start_date": "1/2020",
+        "end_date": "4/2020",   
+        "tech": [
+            "Nginx",
+            "Node.js",
+            "PostgreSQL",
+            "React"
+        ],
+        "details": ""
+    },
+    {   
         "title": "Infrastructure Software Engineer I",
         "company": "TD Ameritrade",
         "location": "Jersey City, NJ",
@@ -24,5 +39,51 @@
             "PowerShell"
         ],
         "details": " * Designed, developed, and supported web based applications as a full-stack developer\n * Created RESTful APIs using the Swagger framework, Python and Node.js, leveraging Flask, React, and PostgreSQL\n * Collaborated with a team of five multispecialists under an AGILE/SCRUM approach\n * Created Powershell scripts and models for analysis of Active Directory objects"
+    }, 
+    {
+        "title": " Cloud Engineering Co-op",
+        "company": "TD Ameritrade",
+        "location": "Jersey City, NJ",
+        "start_date": "1/2017",
+        "end_date": "8/2017",
+        "tech": [
+            "Python",
+            "CloudBolt"
+        ],
+        "details": "* Produced middleware to support a proprietary server provisioning service with Python\n* Documented the dependencies of a proprietary server provisioning web application"
+    },
+    {
+        "title": "IAAS Co-op",
+        "company": "TD Ameritrade",
+        "location": "Jersey City, NJ",
+        "start_date": "5/2016",
+        "end_date": "8/2016",
+        "tech": [
+            "JavaScript",
+            "SharePoint"
+        ],
+        "details": "* Led the development of a SharePoint web application using JavaScript \n* Supported the Managing Director of Infrastructure Services in establishing a formal onboarding process for all technology products at the firm"
+    },{
+        "title": "QA Co-op",
+        "company": "Crestron Electronics",
+        "location": "Rockleigh, NJ",
+        "start_date": "8/2015",
+        "end_date": "12/2015",
+        "tech": [
+            "VBSCript"
+        ],
+        "details": "* Collaborated with a team of four developers to create automated tests of tablet GUIs\n* Developed automated tests scripts in VBScript\n* Utilized the tools and features of the automated testing platform TestComplete"
+    },
+    {
+        "title": "Software Development Co-op",
+        "company": "MIAC Analytics",
+        "location": "New York, NY",
+        "start_date": "1/2015",
+        "end_date": "5/2015",
+        "tech": [
+            "C++",
+            "VBScript"
+        ],
+        "details": "* Developed, debugged, and pushed features to a client facing GUI\n* Debugged and refactored the backend of applications written in C++\n* Wrote a dynamic Excel dictionary of the company's mortgage pricing instruments"
     }
 ]
