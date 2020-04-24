@@ -4,7 +4,7 @@
         "previous_title":""
 ,        "company": "Capital One",
         "location": "New York, NY",
-        "start_date": "5/2020",
+        "start_date": "4/2020",
         "end_date": "Present",
         "tech": [],
         "details": ""
@@ -16,10 +16,17 @@
         "start_date": "1/2020",
         "end_date": "4/2020",   
         "tech": [
-            "Nginx",
             "Node.js",
             "PostgreSQL",
-            "React"
+            "React",
+            "Nginx",
+            "Mocha",
+            "Chai",
+            "Express",
+            "Knex",
+            "BotKit",
+            "Git",
+            "RHEL7"
         ],
         "details": ""
     },
@@ -30,13 +37,21 @@
         "start_date": "6/2018",
         "end_date": "1/2020",
         "tech": [
-            "Nginx",
             "Node.js",
             "Python",
             "Flask",
+            "Gunicorn",
             "PostgreSQL",
             "React",
-            "PowerShell"
+            "Nginx",
+            "PowerShell",
+            "Mocha",
+            "Chai",
+            "Express",
+            "Knex",
+            "BotKit",
+            "Git",
+            "RHEL7"
         ],
         "details": " * Designed, developed, and supported web based applications as a full-stack developer\n * Created RESTful APIs using the Swagger framework, Python and Node.js, leveraging Flask, React, and PostgreSQL\n * Collaborated with a team of five multispecialists under an AGILE/SCRUM approach\n * Created Powershell scripts and models for analysis of Active Directory objects"
     }, 
@@ -48,7 +63,8 @@
         "end_date": "8/2017",
         "tech": [
             "Python",
-            "CloudBolt"
+            "CloudBolt",
+            "RHEL7"
         ],
         "details": "* Produced middleware to support a proprietary server provisioning service with Python\n* Documented the dependencies of a proprietary server provisioning web application"
     },
@@ -70,7 +86,7 @@
         "start_date": "8/2015",
         "end_date": "12/2015",
         "tech": [
-            "VBSCript"
+            "VBScript"
         ],
         "details": "* Collaborated with a team of four developers to create automated tests of tablet GUIs\n* Developed automated tests scripts in VBScript\n* Utilized the tools and features of the automated testing platform TestComplete"
     },

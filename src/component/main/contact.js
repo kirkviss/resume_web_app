@@ -45,7 +45,6 @@ const ContactButton = ({ label, url, icon }) => {
                         margin="xsmall"
                         pad="small"
                         background={tooltipColor}
-                        // round={{ size: "medium", corner: "right" }}
                     >
                         <Text color='background'>{label}</Text>
                     </Box>
