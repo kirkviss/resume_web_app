@@ -11,18 +11,15 @@ import {
 } from 'grommet';
 import ExperienceData from '../../static/data/exp_data'
 
-
-
-// TODO set up so only one opens at at time
 const Position = ({ data }) => {
     return (
-        
-            <AccordionPanel 
+
+        <AccordionPanel
             size='small'
             label={
                 <Grid
                     columns={['2/3', '1/3']}
-                    rows={['1/2','1/2']}
+                    rows={['1/2', '1/2']}
                     areas={[
                         ['header', 'dates'],
                         ['location', 'location']
@@ -40,22 +37,22 @@ const Position = ({ data }) => {
                     </Box>
                 </Grid>
             }>
-                <Box>
+            <Markdown>{data.details}</Markdown>
+            <Grid gap='small' columns='xsmall' margin='medium' >
+                {data.tech.map(tech => (
+                    <Button
+                        size='xsmall'
+                        href={`#${tech}`}
+                        label={<Box algin='end' size='small'>
+                            <Text size='small'>{tech}</Text>
+                        </Box>}
+                        fill='horizontal'
+                   
+                    />
+                ))}
+            </Grid>
+        </AccordionPanel>
 
-                </Box>
-                <Markdown>{data.details}</Markdown>
-                <Grid gap='small' columns='xsmall' >
-                    {data.tech.map(tech => (
-                        <Button
-                            size='xsmall'
-                            href={`#${tech}`}
-                            label={tech}
-                            fill='horizontal'
-                        />
-                    ))}
-                </Grid>
-            </AccordionPanel>
-        
     )
 }
 
@@ -71,7 +68,7 @@ const Experience = (props) => (
                 <Position data={experience} />
             ))}
         </Accordion>
-        </Box>
+    </Box>
 )
 
 export default Experience;

@@ -22,6 +22,15 @@ import { FormClose, Menu, SubtractCircle, AddCircle } from "grommet-icons";
 
 
 const customFocus = deepMerge(grommet, {
+
+  button: {
+    padding:{
+      horizontal: undefined
+    },
+    border: {
+      radius: undefined,
+    }
+  },
   anchor: {
     color: 'accent-2'
   },
@@ -161,7 +170,6 @@ export default class App extends React.Component {
                 algin='center'
                 gap="xlarge"
                 rows={['large', 'flex', 'flex']}
-                // columns={['xlarge']}
               >
                 <WelcomeBanner
                   margin='large'
