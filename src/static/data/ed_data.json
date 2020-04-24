@@ -1,5 +1,18 @@
 [
     {
-        "school": "Stevens Institute of Technology"
+        "school": "Stevens Institute of Technology",
+        "location": "Hoboken, NJ",
+        "degree": "Bachelors of Science, Computer Science",
+        "graduation_date": "05/2018",
+        "tech": [
+            "Python",
+            "C++",
+            "Java",
+            "Scheme",
+            "MySQL",
+            "React",
+            "Node.js"
+        ],
+        "details": "* Graduated Cum Laude\n* President's & Dean's List\n* Captain of the Men's Varsity Fencing Team\n* Web Administrator of Kappa Sigma Fraternity Chapter Rho Omega"
     }
 ]
