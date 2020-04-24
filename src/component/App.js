@@ -168,20 +168,27 @@ export default class App extends React.Component {
 
               <Grid
                 algin='center'
-                gap="xlarge"
-                rows={['large', 'flex', 'flex']}
+                // gap="large"
+                rows={['large', 'flex', 'flex', 'auto']}
               >
                 <WelcomeBanner
-                  margin='large'
+                  // margin='large'
                 />
                 <Experience
+                  // margin={{
+                  //   horizontal:"xlarge",
+                  //   vertical: 'large'
+                  // }}
                   margin='large'
                   pad={{
                     right: 'xlarge'
                   }}
                 />
                 <Education
-                  margin='large' />
+                  margin='large'
+                  pad={{
+                    right: 'xlarge'
+                  }} />
                 <Skills
                   margin='large' />
               </Grid>
