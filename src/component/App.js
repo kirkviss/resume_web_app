@@ -168,11 +168,10 @@ export default class App extends React.Component {
 
               <Grid
                 algin='center'
-                // gap="large"
                 rows={['large', 'auto', 'auto', 'auto']}
               >
                 <WelcomeBanner
-                  // margin='large'
+                  margin='large'
                 />
                 <Experience
                   margin='large'
