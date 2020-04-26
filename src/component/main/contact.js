@@ -1,14 +1,14 @@
 import React, { useRef, useState } from 'react';
-import { Nav, Sidebar, Text, Button, Box, Drop } from 'grommet';
+import { Nav, Sidebar, Text, Button, Box, Drop , Image} from 'grommet';
 import { Github, Linkedin, Download, Mail } from 'grommet-icons';
-
+import logo from '../../static/main_page_logo.png'
 
 const iconsMap = (icon, color) => {
     const map = {
-        Github :  (<Github color={color} />),
+        Github: (<Github color={color} />),
         Linkedin: (<Linkedin color={color} />),
         Download: (<Download color={color} />),
-        Mail: (<Mail color={color}/>)
+        Mail: (<Mail color={color} />)
     }
     return map[icon]
 }
@@ -19,7 +19,7 @@ const ContactButton = ({ label, url, icon }) => {
     const ref = useRef();
 
     return (
-        <Box fill='horizontal'>
+        <Box >
             <Button
                 ref={ref}
                 onMouseOver={() => setOver(true)}
@@ -27,9 +27,8 @@ const ContactButton = ({ label, url, icon }) => {
                 onFocus={() => setOver(false)}
                 onBlur={() => setOver(false)}
                 hoverIndicator
-                plain
                 href={url}
-          
+                plain
             >
                 {({ hover }) => (
                     <Box pad={{ vertical: 'small' }} align='center'>
@@ -56,7 +55,14 @@ const ContactButton = ({ label, url, icon }) => {
 
 const Contact = () => (
     <Box direction='row' background='main_background' >
-        <Sidebar >
+        <Sidebar
+            header={
+                <Box gridArea='logo'  margin='small'>
+                    <Image  src={logo} alt='KV' />
+                </Box>
+            }
+        >
+
             <Nav >
                 {[{
                     url: 'https://github.com/kirkviss',
@@ -79,7 +85,7 @@ const Contact = () => (
                     label: 'Kirkviss@gmail.com'
                 }
                 ].map((data) => (
-                    <ContactButton label={data.label} url={data.url} icon={data.icon}/>
+                    <ContactButton label={data.label} url={data.url} icon={data.icon} />
                 ))}
             </Nav>
         </Sidebar>

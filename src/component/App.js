@@ -15,17 +15,17 @@ import {
   Button,
   Layer,
   Box,
-  Text
+  Image
 } from 'grommet';
 import { deepMerge } from "grommet/utils";
 import { grommet } from "grommet/themes";
 import { FormClose, Menu, SubtractCircle, AddCircle } from "grommet-icons";
-
+import logo from '../static/main_page_logo.png'
 
 const customFocus = deepMerge(grommet, {
 
   button: {
-    padding:{
+    padding: {
       horizontal: undefined
     },
     border: {
@@ -98,31 +98,29 @@ export default class App extends React.Component {
         <Grommet full theme={customFocus}>
           <Grid
             fill
-            columns={['1/8', '7/8']}
-            rows={['auto', 'flex']}
+            columns={['xsmall', 'flex']}
+            rows={['xsmall', 'flex']}
             areas={[
-              { name: "header", start: [0, 0], end: [2, 0] },
-              { name: 'contract', start: [0, 1], end: [1, 1] },
-              { name: "main", start: [1, 1], end: [2, 1] },
+              ['contact', 'header'],
+              ['contact', 'main']
             ]}
           >
+
             {/* -- header & navbar-- */}
             <Box
               gridArea="header"
               direction="row"
-              align="center"
-              justify="between"
-              pad={{ horizontal: "medium", vertical: "medium" }}
+              pad={{  vertical: "small", horizontal:'none' }}
               background="nav"
+              justify='end'
             >
-              <Text >Logo</Text>
               {this.state.isMobile ? (
                 <Button
                   onClick={() => this.setState({ navbar: !this.state.navbar })}
                   icon={<Menu />}
                 />
               ) : (
-                  <NavBar references={this.state.navBarDestinations} direction="row" justify="end" />
+                  <NavBar references={this.state.navBarDestinations} direction="row" algin="end" />
                 )}
 
             </Box>
@@ -186,11 +184,11 @@ export default class App extends React.Component {
                     right: 'xlarge'
                   }} />
                 <Skills
-                  margin='large' 
-                  id='Technology'/>
-                  <Footer
-                    margin='large'
-                  />
+                  margin='large'
+                  id='Technology' />
+                <Footer
+                  margin='large'
+                />
               </Grid>
             </Box>
           </Grid>

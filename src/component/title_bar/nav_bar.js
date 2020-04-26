@@ -12,23 +12,19 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <Box
-                fill
-                overflow="auto"
                 background="nav"
-                width="small"
                 {...this.props}
+                align='end'
             >
 
                 {this.state.references.map(label => (
                     <Button
                         hoverIndicator
-                        round
                         plain
                         href={`#${label}`}
                     >
                         <Box
                             key={label}
-              
                             pad={{ horizontal: "medium", vertical: "medium" }}
                         >
                             <Text size="large"> {label}</Text>
