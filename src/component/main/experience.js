@@ -31,7 +31,7 @@ const Position = ({ data }) => (
                     <Text>{data.location}</Text>
                 </Box>
                 <Box gridArea='dates' pad='medium' align='start' >
-                    <Text >{data.start_date} - {data.end_date}</Text>
+                    <Text > {`${data.start_date} - ${data.end_date}`}</Text>
                 </Box>
             </Grid>
         }>

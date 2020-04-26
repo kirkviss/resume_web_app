@@ -5,16 +5,17 @@ import {
   Experience,
   Education,
   Skills,
-  Contact
+  Contact,
+  Footer
 } from './main'
 import { NavBar } from './title_bar'
 import {
   Grid,
   Grommet,
-  Box,
-  Text,
   Button,
-  Layer
+  Layer,
+  Box,
+  Text
 } from 'grommet';
 import { deepMerge } from "grommet/utils";
 import { grommet } from "grommet/themes";
@@ -187,9 +188,11 @@ export default class App extends React.Component {
                 <Skills
                   margin='large' 
                   id='Technology'/>
+                  <Footer
+                    margin='large'
+                  />
               </Grid>
             </Box>
-
           </Grid>
 
 
