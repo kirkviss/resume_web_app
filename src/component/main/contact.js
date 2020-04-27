@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Nav, Sidebar, Text, Button, Box, Drop , Image} from 'grommet';
+import { Nav, Sidebar, Text, Button, Box, Drop, Image } from 'grommet';
 import { Github, Linkedin, Download, Mail } from 'grommet-icons';
 import logo from '../../static/main_page_logo.png'
 
@@ -57,9 +57,15 @@ const Contact = () => (
     <Box direction='row' background='main_background' >
         <Sidebar
             header={
-                <Box gridArea='logo'  margin='small'>
-                    <Image  src={logo} alt='KV' />
-                </Box>
+                // <Box size='xsmall'>
+                    <Button size="xsmall" plain href='/'>
+                        <Box pad={{
+                            bottom: 'xsmall'
+                        }}>
+                            <Image fit='contain' src={logo} alt='KV' />
+                        </Box>
+                    </Button>
+                // </Box>
             }
         >
 
