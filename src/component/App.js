@@ -15,12 +15,10 @@ import {
   Button,
   Layer,
   Box,
-  Image
 } from 'grommet';
 import { deepMerge } from "grommet/utils";
 import { grommet } from "grommet/themes";
 import { FormClose, Menu, SubtractCircle, AddCircle } from "grommet-icons";
-import logo from '../static/main_page_logo.png'
 
 const customFocus = deepMerge(grommet, {
 
@@ -126,13 +124,15 @@ export default class App extends React.Component {
             </Box>
 
             {/* -- Sidebar -- */}
+            
             {this.state.navbar && (
+              // TODO refactor this so that when a button is pressed the menus despairs 
               <Layer
                 full="vertical"
                 position="right"
                 onEsc={this.state.navbar}
                 onClickOutside={() => this.setState({ navbar: !this.state.navbar })}
-                responsive={false}
+                responsive={true}
                 animation={[
                   { type: "fadeIn", duration: 300 },
                   { type: "slideLeft", size: "large", duration: 150 }

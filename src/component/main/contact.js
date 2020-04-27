@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Nav, Sidebar, Text, Button, Box, Drop, Image } from 'grommet';
 import { Github, Linkedin, Download, Mail } from 'grommet-icons';
-import logo from '../../static/main_page_logo.png'
+import logo from '../../static/main_page_logo.png';
+import dark_logo from '../../static/main_page_logo_dark.png';
 
 const iconsMap = (icon, color) => {
     const map = {
@@ -53,19 +54,38 @@ const ContactButton = ({ label, url, icon }) => {
     )
 }
 
+const LogoButton = () => {
+    const [over, setOver] = useState();
+    const ref = useRef();
+
+    return (
+        
+            <Button
+                ref={ref}
+                onMouseOver={() => setOver(true)}
+                onMouseLeave={() => setOver(false)}
+                onFocus={() => setOver(false)}
+                onBlur={() => setOver(false)}
+                hoverIndicator
+                href='/'
+                plain
+                size="xsmall"
+            >
+                {({ hover }) => (
+       
+                        <Box pad='small'>
+                            <Image fit='contain' src={hover ?  dark_logo : logo} alt='KV' />
+                        </Box>
+                )}
+            </Button>
+        )
+}
+
 const Contact = () => (
     <Box direction='row' background='main_background' >
         <Sidebar
             header={
-                // <Box size='xsmall'>
-                    <Button size="xsmall" plain href='/'>
-                        <Box pad={{
-                            bottom: 'xsmall'
-                        }}>
-                            <Image fit='contain' src={logo} alt='KV' />
-                        </Box>
-                    </Button>
-                // </Box>
+                <LogoButton/>
             }
         >
 

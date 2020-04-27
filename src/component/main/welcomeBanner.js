@@ -1,6 +1,7 @@
 import React from 'react';
 import {  Box, Heading, Text} from 'grommet';
-var figlet = require('figlet');
+//TODO Mix thing up a little with figlet
+// var figlet = require('figlet');
 
 const WelcomeBanner = (props) => (
     
