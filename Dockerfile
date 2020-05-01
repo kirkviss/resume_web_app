@@ -1,8 +1,11 @@
 # Dockerfile 
 # TODO create doccker file proper
-FROM node:7.10 as build-deps
-WORKDIR 
-COPY package.json yarn.lock ./
-RUN yarn
+FROM node:current-slim
+WORKDIR /app
+COPY package.json ./
+COPY package-lock.json ./
+RUN npm ci
 COPY . ./
-RUN yarn build
+RUN npm run build
+EXPOSE 3000
+CMD ["npx", "serve", "-s build", "-l 3000"]
