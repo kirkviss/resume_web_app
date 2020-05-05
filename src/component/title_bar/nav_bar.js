@@ -12,7 +12,6 @@ export default class NavBar extends React.Component {
     render() {
         return (
             <Box
-                background="nav"
                 {...this.props}
             >
 

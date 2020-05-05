@@ -95,7 +95,7 @@ export default class App extends React.Component {
       <div className="component-app">
         <Grommet full theme={customFocus}>
           <Grid
-            fill
+            // fill
             columns={['xsmall', 'flex']}
             rows={['xsmall', 'flex']}
             areas={[
@@ -108,7 +108,7 @@ export default class App extends React.Component {
             <Box
               gridArea="header"
               direction="row"
-              pad={{  vertical: "small", horizontal:'none' }}
+              pad={{ vertical: "small", horizontal: 'none' }}
               background="nav"
               justify='end'
             >
@@ -118,13 +118,13 @@ export default class App extends React.Component {
                   icon={<Menu />}
                 />
               ) : (
-                  <NavBar references={this.state.navBarDestinations} direction="row" algin="end" />
+                  <NavBar references={this.state.navBarDestinations} direction="row" algin="end" background='background'/>
                 )}
 
             </Box>
 
             {/* -- Sidebar -- */}
-            
+
             {this.state.navbar && (
               // TODO refactor this so that when a button is pressed the menus despairs 
               <Layer
@@ -132,22 +132,20 @@ export default class App extends React.Component {
                 position="right"
                 onEsc={this.state.navbar}
                 onClickOutside={() => this.setState({ navbar: !this.state.navbar })}
-                responsive={true}
+                // responsive={true}
                 animation={[
                   { type: "fadeIn", duration: 300 },
-                  { type: "slideLeft", size: "medium", duration: 150 }
+                  { type: "slideLeft", size: "small", duration: 300 }
                 ]}
               >
                 <Box
-                  fill
+                  fill="vertical"
                   direction="row"
                   elevation="small"
                   justify="end"
-                  pad={{ "horizontal": "large" }}
-                  background='background'
-                  algin='end'
+                  background='gray'
                 >
-                  <NavBar references={this.state.navBarDestinations} />
+                  <NavBar references={this.state.navBarDestinations}/>
                   <Button
                     alignSelf="start"
                     onClick={() => this.setState({ navbar: !this.state.navbar })}
