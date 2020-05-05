@@ -14,7 +14,6 @@ export default class NavBar extends React.Component {
             <Box
                 background="nav"
                 {...this.props}
-                align='end'
             >
 
                 {this.state.references.map(label => (

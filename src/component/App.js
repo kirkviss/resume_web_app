@@ -135,16 +135,17 @@ export default class App extends React.Component {
                 responsive={true}
                 animation={[
                   { type: "fadeIn", duration: 300 },
-                  { type: "slideLeft", size: "large", duration: 150 }
+                  { type: "slideLeft", size: "medium", duration: 150 }
                 ]}
               >
                 <Box
                   fill
                   direction="row"
                   elevation="small"
-                  justify="between"
+                  justify="end"
                   pad={{ "horizontal": "large" }}
                   background='background'
+                  algin='end'
                 >
                   <NavBar references={this.state.navBarDestinations} />
                   <Button

@@ -11,6 +11,7 @@ import * as serviceWorker from './serviceWorker';
 // TODO Implement a testing system
 // TODO Remove hard code values where possible 
 // TODO Fix: Logo does not resize properly in mobile view
+// TODO Mobile side bar is miss aligned
 
 
 
