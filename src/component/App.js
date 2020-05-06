@@ -67,11 +67,16 @@ export default class App extends React.Component {
     super(props);
     this.mobileLengthLimit = 680;
     this.updateIsMobile = this.updateIsMobile.bind();
+    this.onMobileSideBarButtonClick = this.onMobileSideBarButtonClick.bind();
     this.state = {
       navbar: false,
       navBarDestinations: ["Intro", "Experience", "Education", "Technology"],
       isMobile: window.innerWidth < this.mobileLengthLimit
     }
+  }
+
+  onMobileSideBarButtonClick = () => {
+    this.setState({ navbar: !this.state.navbar })
   }
 
   updateIsMobile = () => {
@@ -145,7 +150,7 @@ export default class App extends React.Component {
                   justify="end"
                   background='gray'
                 >
-                  <NavBar references={this.state.navBarDestinations}/>
+                  <NavBar references={this.state.navBarDestinations} onNavButtonClick={this.onMobileSideBarButtonClick}/>
                   <Button
                     alignSelf="start"
                     onClick={() => this.setState({ navbar: !this.state.navbar })}
