@@ -1,3 +1,18 @@
+# Hello there
+This is a static web application that I am using a interactive resume. It is built using node.js, react, and grommet (a react component library).
+
+## Creating a image for production
+
+The is a dockerfile associated with application already. Simple create an image with docker file and then run a container with the image. The docker image will contain the necessary files to run the build as well as a nginx image that create a webserver to run from.
+
+To build an image (command must be ran in the same directory as the dockerfile):
+`sudo docker build --tag [image_name]:[version_of_image] .`
+
+To run and create a container: 
+`sudo docker run -p 80:80 -d --name [name_of_container] [image_name]`
+
+# Create React App Info
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

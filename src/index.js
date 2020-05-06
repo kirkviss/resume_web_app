@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './static/index.css';
 import App from './component/App';
 import * as serviceWorker from './serviceWorker';
+
+
 // TODO Rewrite the readme to reflect how the application runs
 // TODO Create a dark mode
 // TODO Create a container class/variable that contains the structure of the eduction and experience containers to remove duplication
@@ -11,7 +13,7 @@ import * as serviceWorker from './serviceWorker';
 // TODO Implement a testing system
 // TODO Remove hard code values where possible 
 // TODO Fix: Logo does not resize properly in mobile view
-// TODO Mobile side bar is miss aligned
+// TODO Side bar takes up the whole screen
 
 
 
