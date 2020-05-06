@@ -30,9 +30,14 @@ const ContactButton = ({ label, url, icon }) => {
                 hoverIndicator
                 href={url}
                 plain
+                
             >
                 {({ hover }) => (
-                    <Box pad={{ vertical: 'small' }} align='center'>
+                    <Box 
+                    size='xsmall' 
+                    pad={{horizontal:'xsmall', vertical: 'small' }} 
+                    
+                    align='center'>
                         {iconsMap(icon, hover ? 'black' : 'white')}
                     </Box>
                 )}
@@ -69,11 +74,10 @@ const LogoButton = () => {
                 hoverIndicator
                 href='/'
                 plain
-                size="xsmall"
             >
                 {({ hover }) => (
        
-                        <Box pad='small'>
+                        <Box pad='xsmall' >
                             <Image fit='contain' src={hover ?  dark_logo : logo} alt='KV' />
                         </Box>
                 )}
@@ -82,8 +86,9 @@ const LogoButton = () => {
 }
 
 const Contact = () => (
-    <Box direction='row' background='main_background' >
+    <Box direction='row' background='main_background'>
         <Sidebar
+           
             header={
                 <LogoButton/>
             }

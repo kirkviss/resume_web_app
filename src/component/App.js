@@ -132,10 +132,10 @@ export default class App extends React.Component {
                 position="right"
                 onEsc={this.state.navbar}
                 onClickOutside={() => this.setState({ navbar: !this.state.navbar })}
-                // responsive={true}
+                responsive={false}
                 animation={[
                   { type: "fadeIn", duration: 300 },
-                  { type: "slideLeft", size: "small", duration: 300 }
+                  { type: "slideLeft", size: "small", duration: 150 }
                 ]}
               >
                 <Box
@@ -149,7 +149,7 @@ export default class App extends React.Component {
                   <Button
                     alignSelf="start"
                     onClick={() => this.setState({ navbar: !this.state.navbar })}
-                    icon={<FormClose />} />
+                    icon={<FormClose color='text'/>} />
                 </Box>
               </Layer>
             )}
