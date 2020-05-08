@@ -67,12 +67,19 @@ export default class App extends React.Component {
     super(props);
     this.mobileLengthLimit = 680;
     this.updateIsMobile = this.updateIsMobile.bind();
+    this.onMobileSideBarButtonClick = this.onMobileSideBarButtonClick.bind();
     this.state = {
       navbar: false,
       navBarDestinations: ["Intro", "Experience", "Education", "Technology"],
       isMobile: window.innerWidth < this.mobileLengthLimit
     }
   }
+
+  onMobileSideBarButtonClick = () => {
+    this.setState({ 
+      navbar: !this.state.navbar 
+    });
+  };
 
   updateIsMobile = () => {
     this.setState({
@@ -131,11 +138,11 @@ export default class App extends React.Component {
                 full="vertical"
                 position="right"
                 onEsc={this.state.navbar}
-                onClickOutside={() => this.setState({ navbar: !this.state.navbar })}
+                onClickOutside={() => this.onMobileSideBarButtonClick() }
                 responsive={false}
                 animation={[
-                  { type: "fadeIn", duration: 300 },
-                  { type: "slideLeft", size: "small", duration: 150 }
+                  { type: "fadeIn", duration: 150 },
+                  { type: "slideLeft", size: "small", duration: 50 }
                 ]}
               >
                 <Box
@@ -145,10 +152,10 @@ export default class App extends React.Component {
                   justify="end"
                   background='gray'
                 >
-                  <NavBar references={this.state.navBarDestinations}/>
+                  <NavBar references={this.state.navBarDestinations} onMobileSideBarButtonClick={this.onMobileSideBarButtonClick}/>
                   <Button
                     alignSelf="start"
-                    onClick={() => this.setState({ navbar: !this.state.navbar })}
+                    onClick={()=> this.onMobileSideBarButtonClick() }
                     icon={<FormClose color='text'/>} />
                 </Box>
               </Layer>
