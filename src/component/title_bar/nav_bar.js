@@ -7,7 +7,13 @@ export default class NavBar extends React.Component {
         this.state ={
             references: props.references
         }
+        this.onNavButtonClick = this.onNavButtonClick.bind();
+    }
 
+    onNavButtonClick = () => {
+        if ('onMobileSideBarButtonClick' in this.props){
+            this.props.onMobileSideBarButtonClick()
+        }
     }
 
     render() {
@@ -21,7 +27,7 @@ export default class NavBar extends React.Component {
                         hoverIndicator
                         plain
                         href={`#${label}`}
-                        onClick={this.props.onMobileSideBarButtonClick()}
+                        onClick={()=> this.onNavButtonClick()}
                     >
                         <Box
                             key={label}
